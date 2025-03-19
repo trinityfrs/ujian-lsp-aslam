@@ -28,7 +28,7 @@
 
                 <div class="mb-4">
                     <label for="instansi_pengajar" class="block mb-1 font-medium">Instansi Pengajar:</label>
-                    <input type="text" id="instansi_pengajar" name="instansi_pengajar" placeholder="Reni"
+                    <input type="text" id="instansi_pengajar" name="instansi_pengajar" placeholder="Kominfo"
                     class="w-full px-3 py-2 border rounded-md focus:ring focus:ring-blue-200 @error('instansi_pengajar') border-red-500 @enderror">
 
                     @error('instansi_pengajar')
@@ -84,7 +84,6 @@
 
             <div class="flex gap-2">
                 <button type="submit" class="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">Simpan</button>
-                <a href="#" class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300">Batal</a>
             </div>
         </form>
     </div>

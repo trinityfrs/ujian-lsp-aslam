@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('nama_pengajar');
             $table->string('instansi_pengajar');
             $table->string('tempat');
-            $table->string('tanggal_sertifikat');
+            $table->date('tanggal_sertifikat'); // Gunakan `date` agar sesuai dengan data tanggal
             $table->text('ttd_pimpinan');
-            $table->text('ttd_pengajar');
+            $table->text('ttd_pengajar')->nullable(); // Tambahkan `nullable()`
             $table->timestamps();
         });
     }

@@ -13,6 +13,6 @@ class Setting extends Model
         'tempat',
         'tanggal_sertifikat',
         'ttd_pimpinan',
-        'ttd_pengaja'
+        'ttd_pengajar'
     ];
 }

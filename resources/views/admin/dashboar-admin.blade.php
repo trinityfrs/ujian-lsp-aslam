@@ -15,6 +15,7 @@
                         <th class="px-4 py-2 text-left">Nama</th>
                         <th class="px-4 py-2 text-left">No. Sertifikat</th>
                         <th class="px-4 py-2 text-left">Tema Pelatihan</th>
+                        <th class="px-4 py-2 text-left">Ceo</th>
                         <th class="px-4 py-2 text-left">Action</th>
                     </tr>
                 </thead>
@@ -24,13 +25,17 @@
                             <td class="px-4 py-2">{{ $peserta->nama }}</td>
                             <td class="px-4 py-2">{{ $peserta->no_sertif }}</td>
                             <td class="px-4 py-2">{{ $peserta->tema_pelatihan }}</td>
+                            <td class="px-4 py-2">{{ $peserta->setting->ceo }}</td>
                             <td class="px-4 py-2">
-                                <a href="#" class="px-3 py-1 text-white bg-yellow-500 rounded-md hover:bg-yellow-600">Edit</a>
-                                <form action="#" method="POST" class="inline">
+                                <a href="{{ route("edit.peserta", $peserta->id) }}" class="px-3 py-1 text-white bg-yellow-500 rounded-md hover:bg-yellow-600">Edit</a>
+                                <form action="{{ route('delete.peserta', $peserta->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Yakin ingin menghapus?')">
                                     @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="px-3 py-1 text-white bg-red-500 rounded-md hover:bg-red-600" onclick="return confirm('Yakin ingin menghapus?')">Hapus</button>
+                                    @method('DELETE') <!-- Gunakan DELETE method -->
+                                    <button type="submit" class="px-3 py-1 text-white bg-red-500 rounded-md hover:bg-red-600">
+                                        Hapus
+                                    </button>
                                 </form>
+                                
                             </td>
                         @empty
                         <p>Data Kosong</p>
