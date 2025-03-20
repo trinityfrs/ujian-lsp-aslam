@@ -7,9 +7,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\user\DashboardUser;
 use App\Http\Controllers\user\SertifikatController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('home.user');
 });
 
 Route::get('/home', [DashboardUser::class, 'index'])->name('home.user');
@@ -35,7 +36,10 @@ Route::post('/create/setting', [SettingController::class, 'save'])->name('create
 Route::get('/sertifikar-saya', [SertifikatController::class, 'index'])->name('user.sertifikat');
 Route::post('/search-sertifikat', [DashboardUser::class, 'searchSertifikat'])->name('search.sertifikat');
 
-
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/');
+})->name('logout');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

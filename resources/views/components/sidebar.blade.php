@@ -14,7 +14,21 @@
     <nav class="flex flex-col mt-4" :class="open ? 'w-auto' : 'w-auto items-center'">
         <x-sidebar-link href="/admin/dashboard" icon="bi bi-house"  :active="request()->routeIs('admin.dashboard')">Data Peserta</x-sidebar-link>
         <x-sidebar-link href="/setting-sertifikat" icon="bi bi-gear"  :active="request()->routeIs('tambah.setting')">Setting</x-sidebar-link>
-        <x-sidebar-link href="/table/pesanan" icon="bi bi-box-arrow-left"  :active="request()->routeIs('table-pesanan')">Logout</x-sidebar-link>
+
+
+        <form id="logout-form" method="POST" action="{{ route('logout') }}" >
+            @csrf
+            <button type="submit" class="flex items-center px-4 py-2 text-sm transition rounded-md hover:bg-gray-700">
+                <span class="text-lg material-icons-outlined">
+                    <i class="bi bi-box-arrow-left"></i>
+                </span>
+
+                <span class="ml-3 transition-all duration-300">
+                    Logout
+                </span>
+            </a>
+        </form>
+
     </nav>
 </div>
 
